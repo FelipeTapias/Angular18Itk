@@ -1,0 +1,38 @@
+@import '../../../../assets/sass/variables';
+
+.wrapper {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(11.25rem, 100%), 1fr));
+    grid-auto-rows: repeat(auto-fill, 10px);
+    place-items: center;
+    grid-gap: 1rem;
+    margin-top: 1%;
+    grid: 1rem;
+  }
+
+.container-bill {
+  margin-top: 10px;
+  height: 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 12px 0px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: $light-gray;
+  background: linear-gradient(135deg, $black, $secondary-green);
+  font-size: 40px;
+  border-radius: 5px;
+  width: 90%;
+  box-shadow: rgb(233, 226, 210) 0px 2px 4px;
+}
+
+.session-names{
+  border-bottom: 1px dashed white;
+  font-weight: bold;
+  color: $light-gray;
+  height: 30px;
+  text-align: center;
+  width: 97%;
+  margin: 0 auto;
+}

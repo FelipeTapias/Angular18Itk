@@ -1,0 +1,27 @@
+@import '../../../assets/sass/variables';
+
+.content {
+    display: grid;
+    place-items: center;
+    border: 1px solid rgb(118, 88, 13);
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 30%;
+    &__text {
+        width: 90%;
+        font-size: 20px;
+        color: $white;
+        text-align: center;
+        border: #1A202C;
+        border-bottom: 1px solid rgb(118, 88, 13);
+        height: auto;
+        min-height: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        padding: 8px;        
+    }
+}

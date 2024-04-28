@@ -1,0 +1,10 @@
+<div class="modal">
+    <div class="modal--body">
+        <button class="modal--close" (click)="closeNotification()">X</button>
+        <div class="container-detail">
+            <h3 class="modal--body__title">{{ config.title }}</h3>
+            <p class="modal--body__p">{{ config.description }}</p>
+            <button *ngIf="config.showButton" class="modal--body__button" (click)="orderProductConfirm()">{{ config.butonDetail }}</button>
+        </div>
+    </div>
+</div>

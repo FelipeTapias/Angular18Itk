@@ -1,0 +1,25 @@
+<input type="checkbox" id="btn-shopping" #myCheckShopping>
+<div class="container-shopping" >
+    <div class="cont-shopping">
+        <div class="cont-shopping__nav">
+            <h2 class="cont-shopping__nav--text">Tu Carrito</h2>
+            <h3 class="cont-shopping__nav--text2">Hola, <span>{{userName}}</span></h3>
+            <div class="cont-shopping__nav--cont">
+                <button class="cont-shopping__nav--cont--button" (click)="completeOrder()" *ngIf="temporalOrders.length">Ordenar</button>
+            </div>
+            <h3 class="cont-shopping__nav--text3">Tus ordenes</h3>
+            <div class="cont-shopping__nav--list" *ngIf="temporalOrders.length; else noOrders">
+                <div *ngFor="let product of temporalOrders">
+                    <app-secondary-card [product]="product"></app-secondary-card>
+                </div>
+            </div>
+        </div>
+        <label class="cont-shopping__label" (click)="closeMenu()">
+            <img src="../../../assets/img/svg/logo-close.svg">
+        </label>
+    </div>
+</div>
+
+<ng-template #noOrders>
+    <app-empty-content [imgName]="'logo-empty-products'" [text]="'No tienes ordenes en tu carrito.'"></app-empty-content>
+</ng-template>

@@ -1,0 +1,22 @@
+<div *ngIf="productsList$ | async">
+    <div *ngIf="summary.totalAmount > 0 else noBill">
+        <div class="container-bill">
+            <p class="total"><strong>{{ summary.totalAmount | currency }}</strong></p>
+        </div>
+    
+        <div *ngFor="let detail of summary.details">
+            <div class="session-names">   
+                <p>{{detail.displayName}} - {{detail.total}}</p>
+            </div>
+            <div class="wrapper">
+                <div *ngFor="let order of detail.orders">
+                    <app-bill-card [order]="order"></app-bill-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noBill>
+    <app-empty-content [imgName]="'logo-empty-wallet'" [text]="'Aún no hay ordenes confirmadas, visualiza la lista de productos para ordenar.'"></app-empty-content>
+</ng-template>

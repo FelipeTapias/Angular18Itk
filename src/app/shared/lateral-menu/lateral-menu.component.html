@@ -1,0 +1,13 @@
+<input type="checkbox" id="btn-menu" #myCheck>
+<div class="container-menu" (click)="closeMenu()">
+    <div class="cont-menu">
+        <nav class="cont-menu__nav">
+            <ul>
+                <li *ngFor="let category of categories" class="cont-menu__nav--a" (click)="selectedItem(category)">{{ category.code }}</li>
+            </ul>
+        </nav>
+        <label class="cont-menu__label" (click)="closeMenu()">
+            <img src="../../../assets/img/svg/logo-close.svg">
+        </label>
+    </div>
+</div>

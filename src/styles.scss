@@ -1,0 +1,14 @@
+@import './assets/sass/variables';
+
+* {
+    font-family:  Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    background: linear-gradient(to bottom right,rgba(61, 59, 56, 0.8), $secondary-green 60%);
+    min-height: 100vh;
+}

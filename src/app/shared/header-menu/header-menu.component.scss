@@ -1,0 +1,27 @@
+@import '../../../assets/sass/variables';
+
+.topnav {
+    background-color: $primary-green;
+    box-shadow: $secondary-green 0px 10px 20px -5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    border: 2px solid $opaque-gray;
+    padding: 3px 12px;
+    &--item {
+      float: left;
+      color: $opaque-gray;
+      text-align: center;
+      padding: 2.5px 4px;
+      text-decoration: none;
+      font-size: 25px;
+      &__active {
+        background-color: $secondary-green;
+        color: $white;
+        border-radius: 5px;
+      }
+    }
+  }

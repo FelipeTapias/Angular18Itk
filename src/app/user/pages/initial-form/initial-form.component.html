@@ -1,0 +1,10 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="saveUser()" class="container--form">
+        <h4 class="container--form__title">Bienvenido</h4>
+        <hr style="height:3px;border-width:0;background-color: rgb(230,191,150);">
+        <div class="container-center">
+            <input type="text" placeholder="Ingresa tu usuario" formControlName="user" class="container--form__input">
+            <button type="submit" [disabled]="form.invalid" class="container--form__button">Aceptar</button>
+        </div>
+    </form>
+</div>

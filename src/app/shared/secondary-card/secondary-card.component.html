@@ -1,0 +1,29 @@
+<div class="container">
+    <img class="container--img" src="{{product.product.images[0].descriptor}}">
+    <div class="container--quantity">
+        <p class="container--quantity__number">{{ product.quantity }}</p>
+    </div>
+    <div class="container--delete" (click)="deleteOrder(product.idOrder)">
+        <div class="container--delete__action"></div>
+    </div>
+    <div class="container--edit" (click)="editOrder(product)">
+        <div class="container--edit__action"></div>
+    </div>
+    <div class="container--text">
+        <p>
+            {{ product.product.name }} -
+        </p>
+        <div class="container--text__details">
+            <p *ngFor="let detail of detailsOrder">
+                 {{detail}}
+            </p>
+        </div>
+        <p style="display: block;">
+            {{ product.product.totalCost | currency }}
+        </p>
+    </div>
+</div>
+
+<div *ngIf="modalSwitch">
+    <app-secondary-modal [product]="product"></app-secondary-modal>
+</div>

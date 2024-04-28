@@ -1,0 +1,39 @@
+<div class="modal">
+    <div class="modal--body">
+        <button (click)="closeModal()" class="modal--close">
+            <img src="../../../assets/img/svg/logo-close.svg">
+        </button>
+        <div class="container-detail">
+            <div class="image-container">
+                <img class="modal--body__img" src="{{product.product.images[0].descriptor}}">
+            </div>
+            <h3 class="modal--body__title">{{ product.product.name }}</h3>
+            <p class="modal--body__p">{{ product.product.description }}</p>
+
+            <!-- Esto es lo que agregue -- Mirai -->
+            <div class="details-all" *ngIf="product.details">
+            <div class="container-list" *ngFor="let d of product.product.details; index as i">
+                <details>
+                <summary>{{d.name}}<span id="{{i}}" class="selection"></span></summary>
+                <div *ngFor="let dd of d.details; index as j">
+                    <label>
+                        <input type="radio" name="detailGroup{{i}}" value="{{dd.cost}}"
+                            (change)="changeDetail(i,d.name,dd)">{{dd.code}}
+                            <span class="inner-span" *ngIf="dd.cost > 0">+{{dd.cost | currency}}</span>
+                    </label>
+                </div>
+                </details>
+            </div>
+            </div>
+            <!-- Hasta aqui -->
+            <div class="modal--xy">
+            <div class="modal--xy--amount">
+                <button (click)="removeProduct()" class="modal--xy--amount__button">-</button>
+                <p class="modal--xy--amount__p">{{ amount }}</p>
+                <button (click)="addProduct()" class="modal--xy--amount__button">+</button>
+            </div>
+            <button class="modal--xy--button" (click)="orderProductModal()">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>

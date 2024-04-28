@@ -1,0 +1,8 @@
+<app-float-button [buttonPosition]="'left'" [buttonIcon]="'logo-basket'" [typeAction]="'shopping-list'" [conditionShow]="'userExist'" [showSubButton]="true"></app-float-button>
+<app-float-button [buttonPosition]="'right'" [buttonIcon]="'logo-phone'" [typeAction]="'call'" [showSubButton]="false"></app-float-button>
+<app-loading></app-loading>
+<div class="container-navbar">
+    <app-header-menu></app-header-menu>
+    <app-shopping-list></app-shopping-list>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,103 @@
+@import '../../../assets/sass/variables';
+
+#btn-shopping {
+    display: none;
+}
+
+.container-shopping {
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+#btn-shopping:checked ~ .container-shopping {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-shopping {
+    width: 100%;
+    max-width: 100%;
+    background: linear-gradient(to bottom right,rgba(61, 59, 56), $secondary-green 60%);
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateY(100%);
+    float:left;
+    top: 0px;
+    overflow-y: auto;
+    height: 100vh;
+    &__nav {
+        transform: translateY(1%);
+        padding-bottom: 100px;
+        &--text {
+            font-size: 1.8em;
+            text-align: center;
+            color: $white;
+            margin: 0;
+        }
+        &--text2 {
+            font-size: 1.5em;
+            text-align: center;
+            color: $white;
+            border-bottom: 1px solid rgb(118, 88, 13);
+            border-radius: 20px;
+        }
+        &--text3 {
+            text-align: center;
+            color: rgb(118, 88, 13);
+        }
+        &--list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(10000rem, 100%), 1fr));
+            place-items: center;
+            grid-gap: 1rem;
+        }
+        &--cont {
+            display: grid;
+            place-items: center;
+            &--button {
+                align-items: center;
+                background: linear-gradient(135deg, $primary-green , $opaque-gray);
+                border: 2px solid rgb(118, 88, 13);
+                box-sizing: border-box;
+                color: $white;
+                display: inline-flex;
+                font-size: 1rem;
+                font-weight: 700;
+                height: 52px;
+                justify-content: center;
+                line-height: 24px;
+                overflow-wrap: break-word;
+                padding: 24px;
+                text-decoration: none;
+                width: 80%;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+    &__label {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+    }
+}
+
+#btn-shopping:checked ~ .container-shopping .cont-shopping {
+    transform: translateY(0%);
+}
+
+span {
+    color: rgb(118, 88, 13);
+}

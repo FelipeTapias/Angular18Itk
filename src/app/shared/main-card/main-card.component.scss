@@ -1,0 +1,46 @@
+@import '../../../assets/sass/_variables';
+
+.container {
+  position: relative;
+  display: inline-block;
+  height: 200px;
+  width: 180px;
+  border: 1px solid $opaque-gray;
+  border-radius: 8px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  padding: 2px;
+  padding-bottom: 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  &--img {
+    position: relative;
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: 8px;
+  }
+  &--text {
+    position: absolute;
+    color: $white; 
+    text-align:left;
+    margin: 0 auto;
+    left: 15px;
+    font-size: large;
+    width: 90%;
+    bottom: 0;
+    z-index: 5;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 7px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    z-index: 1;
+  }
+}

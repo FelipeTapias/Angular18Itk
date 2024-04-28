@@ -1,0 +1,8 @@
+<div class="container-{{buttonPosition}}" #floatButton>
+    <button class="container-{{buttonPosition}}__floating-button" (click)="action()">
+        <img src="../../../assets/img/svg/{{buttonIcon}}.svg" alt="">
+        <div class="container-{{buttonPosition}}__sub-floating-button" *ngIf="showSubButton && countOrder">
+            <p class="container-{{buttonPosition}}__sub-floating-button--text">{{ countOrder }}</p>
+        </div>
+    </button>
+</div>

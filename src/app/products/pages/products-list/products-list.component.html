@@ -1,0 +1,24 @@
+<div class="wrapper" *ngIf="productsList$ | async;">
+
+    <ng-container *ngIf="products.length; else noThere">
+        <div *ngFor="let product of products">
+            <app-main-card [product]="product" (click)="openModal(product)" ></app-main-card>
+        </div>
+    </ng-container>
+
+    <div *ngIf="modalSwitch">
+        <app-modal [product]="product" (orderProduct)="orderProductConfirm($event)"></app-modal>
+    </div>
+
+    <div *ngIf="modalNotificationSwitch">
+        <app-modal-notification [config]="notificationConfig" (orderProduct)="orderProduct()"></app-modal-notification>
+    </div>
+
+    <div *ngIf="modalNotificationSuccessSwitch">
+        <app-modal-notification [config]="notificationConfig" (orderProduct)="orderProductFinalize()"></app-modal-notification>
+    </div>
+</div>
+<ng-template #noThere>
+   <app-empty-content [imgName]="'logo-empty-products'" [text]="'Aún no hay productos para esta categoria.'"></app-empty-content>
+</ng-template>
+

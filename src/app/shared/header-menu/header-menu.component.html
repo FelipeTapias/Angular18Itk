@@ -1,0 +1,15 @@
+<div class="topnav" *ngIf="showMenu" >
+    <div>
+        <label for="btn-menu" class="topnav--item">
+            <img src="../../../assets/img/svg/logo-menu.svg" alt="menu">
+        </label> 
+    </div>
+    <a class="topnav--item" [routerLink]="['/productos/lista-productos']" routerLinkActive="topnav--item__active">
+        {{ showCategory }}
+    </a>
+    <a class="topnav--item" [routerLink]="['/productos/mis-compras']" routerLinkActive="topnav--item__active">
+        <img src="../../../assets/img/svg/logo-bill.svg" alt="bill">
+    </a>
+</div>
+
+<app-lateral-menu *ngIf="showMenu" (category)="getCategory($event)"></app-lateral-menu>
